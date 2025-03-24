@@ -3,13 +3,18 @@ import ActivityCard from './ActivityCard';
 
 export default function ActivityList({
     activities,
+    selectActivity,
 }: {
     activities: Activity[];
+    selectActivity: (id: string) => void;
 }) {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             {activities.map((activity) => (
-                <ActivityCard activity={activity} />
+                <ActivityCard
+                    activity={activity}
+                    selectActivity={selectActivity}
+                />
             ))}
         </Box>
     );
